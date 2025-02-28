@@ -84,7 +84,6 @@ extension MetronomeControlViewModel {
         case .decreaseShortBpm:
             self.tempoUseCase.updateTempo(newBpm: self.state.bpm - 1)
             self.taptapUseCase.finishTapping()
-
         case let .decreaseLongBpm(currentBpm):
             let remainder = currentBpm % 10
             let roundedBpm = remainder == 0 ? currentBpm + remainder : currentBpm + (10 - remainder)
